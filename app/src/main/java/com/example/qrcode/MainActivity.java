@@ -1,14 +1,20 @@
 package com.example.qrcode;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.qrcode.databinding.ActivityMainBinding;
 
+public class MainActivity extends AppCompatActivity {
+private CodeGen mCodeGen= new CodeGen("ddd");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        binding.setCodegen(mCodeGen);
     }
 }
