@@ -9,45 +9,51 @@
         <variable name="codegen" type="com.example.qrcode.CodeGen"/>
     </data>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:orientation="vertical"
-        tools:ignore="ExtraText">
 
 
 
-        <TextView
-            android:id="@+id/textView"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{codegen.code}"/>
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/etqr"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textMultiLine"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-            android:text="@={codegen.code}"/>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme" />
 
-        <ImageView
-            android:id="@+id/iv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:imageBitmap="@{codegen.QRImg}"
-             />
+                <ImageView
+                    android:id="@+id/iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:imageBitmap="@{codegen.QRImg}" />
 
-        <Button
-            android:id="@+id/btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Создать QR код."
-            android:onClick="@{codegen.GenerateQR}"/>
+                <EditText
+                    android:id="@+id/etqr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+
+                    android:text="@={codegen.code}" />
+
+                <Button
+                    android:id="@+id/btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{codegen.GenerateQR}"
+                    android:text="Создать QR код." />
+            </LinearLayout>
+        </ScrollView>
 
 
-    </LinearLayout>
+
 
 </layout>
