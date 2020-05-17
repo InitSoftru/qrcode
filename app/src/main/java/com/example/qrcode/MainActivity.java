@@ -29,6 +29,7 @@ import static android.app.PendingIntent.getActivity;
 
 public class MainActivity extends AppCompatActivity {
 //private CodeGen mCodeGen= new CodeGen("ddd");
+
 private CodeGen mCodeGen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
